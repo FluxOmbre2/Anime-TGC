@@ -1,0 +1,98 @@
+/* === Global === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #111, #222);
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Pour contrôler la superposition des éléments */
+}
+
+/* === Vidéo d'intro === */
+#intro-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    z-index: 1; /* Assurer que la vidéo reste au fond */
+}
+
+#intro-video {
+    width: 100%;
+    height:  95%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+
+/* Animation fadeIn pour la vidéo */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* === Flèches de navigation === */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.arrow.left {
+    left: 20px;  /* Position de la flèche gauche */
+}
+
+.arrow.right {
+    right: 20px;  /* Position de la flèche droite */
+}
+#invoke-button {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    background-color: #00ccff; /* bleu ciel */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 204, 255, 0.4);
+    transition: background-color 0.3s;
+}
+
+#invoke-button:hover {
+    background-color: #00aee0;
+}
+

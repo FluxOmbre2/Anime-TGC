@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Carte 1",
+        "image": "assets/card_image1.jpg",
+        "description": "Description de la carte 1",
+        "pv": 100
+    },
+    {
+        "id": 2,
+        "name": "Carte 2",
+        "image": "assets/card_image2.jpg",
+        "description": "Description de la carte 2",
+        "pv": 150
+    },
+
+    {
+        "id": 100,
+        "name": "Carte 100",
+        "image": "assets/card_image100.jpg",
+        "description": "Description de la carte 100",
+        "pv": 200
+    }
+]
