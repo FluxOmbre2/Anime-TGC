@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+.banner-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animation d'invocation */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+/* === Partie gauche avec perso + fond en diagonale === */
+.character-side {
+    flex: 1;
+    background: linear-gradient(to top right, #111 50%, transparent 50%), 
+                url('../assets/fond-gauche.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    clip-path: polygon(0 0, 75% 0, 50% 100%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-img {
+    max-height: 90%;
+    max-width: 90%;
+    z-index: 2;
+}
+
+/* === Partie droite avec infos === */
+.info-side {
+    flex: 1;
+    background: #1b1b1b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px;
+}
+
+.banner-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner-desc {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+#invoke-btn {
+    padding: 15px 30px;
+    background-color: #00ccff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 204, 255, 0.5);
+    transition: background-color 0.3s;
+}
+
+#invoke-btn:hover {
+    background-color: #00aee0;
+}

@@ -1,0 +1,153 @@
+/* === Global === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #0a0a0a, #333);
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* === Container principal === */
+#inventory-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+/* === Carte === */
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: #2c3e50;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.card .card-title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+.card .card-description {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 5px;
+}
+
+/* === Bouton invoquer === */
+#invoke-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: #00c7ff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#invoke-button:hover {
+    background: #1abc9c;
+}
+
+/* === Flèches de navigation === */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+/* === Titre de l'inventaire === */
+#inventory-title {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* === Barre de recherche === */
+.search-bar {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #fff;
+    width: 80%;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #00c7ff;
+}
